@@ -83,7 +83,7 @@ const LoginForm = () => {
       <button
         type="submit"
         disabled={isLoading}
-        className={`w-full bg-gray-600 text-white py-2 rounded-md hover:bg-blue-700 transition ${
+        className={`w-full bg-gray-600 text-white py-2 rounded-md hover:bg-grey-700 transition ${
           isLoading ? 'opacity-70 cursor-not-allowed' : ''
         }`}
       >
@@ -96,7 +96,7 @@ const LoginForm = () => {
             Iniciando sesión...
           </span>
         ) : (
-          'Log In'
+          'Iniciar Sesión'
         )}
       </button>
     </form>

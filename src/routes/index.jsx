@@ -1,16 +1,31 @@
 import { Routes, Route } from 'react-router-dom';
-import Login from '../pages/Login';
+import MainLayout from '../components/layout/MainLayout';
 import Dashboard from '../pages/Dashboard';
-// Importa otras páginas aquí...
+import CommunityRequests from '../pages/CommunityRequests';
+import Communities from '../pages/Communities';
+import Users from '../pages/Users';
+import Login from '../pages/Login';
+import { AuthProvider } from '../context/AuthContext';
 
-export function AppRoutes() {
+const AppRoutes = () => {
   return (
     <Routes>
+      {/* Ruta pública sin layout */}
       <Route path="/login" element={<Login />} />
-      <Route path="/dashboard" element={<Dashboard />} />
-      {/* Agrega más rutas según sea necesario */}
-      <Route path="/" element={<h1>Página Principal</h1>} />
-      <Route path="*" element={<h1>404 - Página no encontrada</h1>} />
+      
+      {/* Rutas protegidas con layout */}
+      <Route element={<MainLayout />}>
+        <Route index element={<Dashboard />} />
+        <Route path="dashboard" element={<Dashboard />} />
+        <Route path="requests" element={<CommunityRequests />} />
+        <Route path="communities" element={<Communities />} />
+        <Route path="users" element={<Users />} />
+      </Route>
+      
+      {/* Ruta de fallback (opcional) */}
+      <Route path="*" element={<div>404 - Página no encontrada</div>} />
     </Routes>
   );
-}
+};
+
+export default AppRoutes;
