@@ -25,27 +25,31 @@ const LoginForm = () => {
     setIsLoading(true);
     setError('');
     
-    try {
-      // Simulación de validación básica
-      if (!email || !password) {
-        throw new Error('Por favor complete todos los campos');
-      }
+    setTimeout(() => {
+      navigate('/dashboard');
+    }, 1000);
+
+    // try {
+    //   // Simulación de validación básica
+    //   if (!email || !password) {
+    //     throw new Error('Por favor complete todos los campos');
+    //   }
       
-      // Intento de inicio de sesión
-      const success = login(email, password);
+    //   // Intento de inicio de sesión
+    //   const success = login(email, password);
       
-      if (success) {
-        // Redirigir al dashboard después de 1 segundo (simulando carga)
-        setTimeout(() => {
-          navigate('/dashboard');
-        }, 1000);
-      } else {
-        throw new Error('Credenciales inválidas');
-      }
-    } catch (err) {
-      setError(err.message);
-      setIsLoading(false);
-    }
+    //   if (success) {
+    //     // Redirigir al dashboard después de 1 segundo (simulando carga)
+    //     setTimeout(() => {
+    //       navigate('/dashboard');
+    //     }, 1000);
+    //   } else {
+    //     throw new Error('Credenciales inválidas');
+    //   }
+    // } catch (err) {
+    //   setError(err.message);
+    //   setIsLoading(false);
+    // }
   };
 
   return (

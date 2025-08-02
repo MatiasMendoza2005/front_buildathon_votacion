@@ -6,6 +6,7 @@ import Communities from '../pages/Communities';
 import Users from '../pages/Users';
 import Login from '../pages/Login';
 import { AuthProvider } from '../context/AuthContext';
+import Logs from '../pages/Logs';
 
 const AppRoutes = () => {
   return (
@@ -20,6 +21,7 @@ const AppRoutes = () => {
         <Route path="requests" element={<CommunityRequests />} />
         <Route path="communities" element={<Communities />} />
         <Route path="users" element={<Users />} />
+        <Route path="logs" element={<Logs />} />
       </Route>
       
       {/* Ruta de fallback (opcional) */}

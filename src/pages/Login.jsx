@@ -23,7 +23,7 @@ const Login = () => {
         <div 
           key={belt}
           ref={el => belts.current[belt] = el}
-          className={`absolute flex space-x-8 ${[
+          className={`absolute flex space-x-56 ${[
             'top-10',    // Primer cinturón cerca del borde superior
             'top-1/3',   // Segundo cinturón
             'bottom-1/3', // Tercer cinturón
@@ -36,7 +36,7 @@ const Login = () => {
           {[...Array(10)].map((_, i) => (
             <div key={i} className="w-32 h-32 flex-shrink-0">
               <img 
-                src={`/src/assets/images/logo.jpg`} 
+                src={`/src/assets/images/logo.png`} 
                 alt="" 
                 className="w-full h-full object-contain opacity-20"
               />
@@ -55,10 +55,10 @@ const Login = () => {
       <style jsx>{`
         @keyframes moveRight {
           0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
+          100% { transform: translateX(-20%); }
         }
         @keyframes moveLeft {
-          0% { transform: translateX(-50%); }
+          0% { transform: translateX(-20%); }
           100% { transform: translateX(0); }
         }
       `}</style>
