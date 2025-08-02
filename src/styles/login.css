@@ -1,0 +1,27 @@
+.bg-logo-pattern {
+  background-image: url('/src/assets/images/logo.jpg');
+  background-repeat: repeat;
+  background-size: 100px 100px; /* Tamaño de cada logo */
+  background-position: 0 0;
+  background-attachment: fixed;
+  background-color: #f3f4f6; /* Color de fondo base */
+  position: relative;
+}
+
+/* Efecto de superposición para suavizar */
+.bg-logo-pattern::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.7); /* Ajusta el blanco/opacidad */
+  z-index: 0;
+}
+
+/* Asegura que el formulario esté sobre el fondo */
+.bg-logo-pattern > div {
+  position: relative;
+  z-index: 1;
+}
