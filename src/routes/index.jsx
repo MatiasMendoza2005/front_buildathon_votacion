@@ -16,7 +16,7 @@ const AppRoutes = () => {
       
       {/* Rutas protegidas con layout */}
       <Route element={<MainLayout />}>
-        <Route index element={<Dashboard />} />
+        <Route index element={<Login />} />
         <Route path="dashboard" element={<Dashboard />} />
         <Route path="requests" element={<CommunityRequests />} />
         <Route path="communities" element={<Communities />} />
